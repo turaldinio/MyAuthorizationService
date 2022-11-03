@@ -27,11 +27,18 @@ public class AuthorizationService {
         return userAuthorities;
     }
 
+    public List<Authorities> createUser(String user, String password) {
+        if (isEmpty(user) || isEmpty(password)) {
+            throw new InvalidCredentials("User name or password is empty");
+        }
+        return userRepository.addUser(user, password);
+    }
+
     private boolean isEmpty(String str) {
         return str == null || str.isEmpty();
     }
 
-    private boolean isEmpty(List<?> str)  {
+    private boolean isEmpty(List<?> str) {
         return str == null || str.isEmpty();
     }
 }

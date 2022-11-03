@@ -20,4 +20,9 @@ public class AuthorizationController {
     public List<Authorities> getAuthorities(@RequestParam("user") String user, @RequestParam("password") String password) {
         return service.getAuthorities(user, password);
     }
+
+    @GetMapping("/createUser")
+    public List<Authorities> createUser(@RequestParam("user") String user, @RequestParam("password") String password) {
+        return service.createUser(user, password);
+    }
 }
