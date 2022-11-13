@@ -3,7 +3,7 @@ package ru.guluev.serviceforautorization.model;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class User {
+public class    User {
     @NotBlank()
     private String name;
 
